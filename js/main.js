@@ -2,9 +2,9 @@
 //
 //Escribir una función que tome un arreglo de números y devuelva el número mayor de la lista. 
 //Ejemplo del arreglo : [3, 5, 7, 1, 6]
-function max(myArray){
-	let sortedArray = myArray.sort((a,b)=> a - b);
-	return sortedArray[sortedArray.length -1];
+function max(myArray) {
+	let sortedArray = myArray.sort((a, b) => a - b);
+	return sortedArray[sortedArray.length - 1];
 }
 
 //console.log(max([3, 5, 7, 1, 6]));
@@ -13,16 +13,16 @@ function max(myArray){
 //María llega a su entrevista de trabajo para el rol de Desarrollador Junior y se le pide que resuelva este problema:
 //Dada una lista de números [-1, 3, 4, 2, 6], escribe una función en javascript para calcular el número más pequeño.
 
-function min(myArray){
-	let sortedArray = myArray.sort((a,b)=> b - a);
-	return sortedArray[sortedArray.length -1];
+function min(myArray) {
+	let sortedArray = myArray.sort((a, b) => b - a);
+	return sortedArray[sortedArray.length - 1];
 }
 console.log(min([-1, 3, 4, 2, 6]));
 //## Ejercicio #3
 //Escribir una función que permita saber si un número se repite dentro de un arreglo.
-function isRepeating(myArray){
+function isRepeating(myArray) {
 	let numberRepeated = false;
-	myArray.forEach(number => myArray.indexOf(number)!==myArray.lastIndexOf(number)? numberRepeated = true:null)
+	myArray.forEach(number => myArray.indexOf(number) !== myArray.lastIndexOf(number) ? numberRepeated = true : null)
 	return numberRepeated;
 }
 console.log(isRepeating([1, 22, 5, 17, 10, 5, 40, 5]));
@@ -43,8 +43,12 @@ console.log(isRepeating([1, 22, 5, 14, 24, 31, 27, 15, 105]));
 //Escribir una función que tome un arreglo ordenado y devuelva un arreglo completamente desordenado
 //Entrada: [1, 2, 5, 14, 24, 31, 50, 105]
 //Posible salida: [105, 31, 14, 1, 2, 50, 24, 5]
-
-
+function shuffleArray(myArray) {
+	let unorderedArray;
+	unorderedArray = myArray.sort((a, b) => a * Math.random() - 0.5);
+	return unorderedArray;
+}
+console.log(shuffleArray([1, 2, 5, 14, 24, 31, 50, 105]));
 //Referencias:
 
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
